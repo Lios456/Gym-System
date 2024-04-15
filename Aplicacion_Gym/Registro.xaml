@@ -1,0 +1,79 @@
+﻿<Window x:Class="Aplicacion_Gym.Registro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicacion_Gym"
+        mc:Ignorable="d"
+        Title="Registro" Height="450" Width="800" FontFamily="Arial" FontSize="18">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource Borde Label}"/>
+        <Label Content="DNI:" Grid.Row="0" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent"/>
+        <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource Borde Textbox}"/>
+        <TextBox Name = "DNI" Grid.Row="0" Grid.Column="1" Style="{StaticResource tx transparente}" Text="{Binding Path=DNI}" ></TextBox>
+
+        <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource Borde Label}"/>
+        <Label Content="Nombre:" Grid.Row="1" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Border Grid.Column="1" Grid.Row="1" Style="{StaticResource Borde Textbox}"/>
+        <TextBox Name ="Nombre" Grid.Row="1" Grid.Column="1" Style="{StaticResource tx transparente}" Text="{Binding Path=Name}"></TextBox>
+
+        <Border Grid.Column="0" Grid.Row="2" Style="{StaticResource Borde Label}"/>
+        <Label Content="Apellido:" Grid.Row="2" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource Borde Textbox}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource tx transparente}" Text="{Binding Path=LastName}"></TextBox>
+
+        <Border Grid.Column="0" Grid.Row="3" Style="{StaticResource Borde Label}"/>
+        <Label Content="Teléfono:" Grid.Row="3" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Border Grid.Column="1" Grid.Row="3" Style="{StaticResource Borde Textbox}"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource tx transparente}" Text="{Binding Path=Phone}"></TextBox>
+
+        <Border Grid.Column="0" Grid.Row="4" Style="{StaticResource Borde Label}"/>
+        <Label Content="Fecha de Nacimiento:" Grid.Row="4" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Border Grid.Column="1" Grid.Row="4" Style="{StaticResource Borde Textbox}"/>
+        <DatePicker x:Name="fecha" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" Padding="6,2,2,2" Foreground="Black" BorderThickness="0,0,0,0" Margin="5" SelectedDate="{Binding Path=Fnac}">
+            <DatePicker.HorizontalContentAlignment>Center</DatePicker.HorizontalContentAlignment>
+            <DatePicker.Background>Transparent</DatePicker.Background>
+        </DatePicker>
+
+        <Border Grid.Column="0" Grid.Row="5" Style="{StaticResource Borde Label}"/>
+        <Label Content="Edad:" Grid.Row="5" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Border Grid.Column="1" Grid.Row="5" Style="{StaticResource Borde Textbox}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource tx transparente}" Text="{Binding Path=Age}"></TextBox>
+
+        <Border Grid.Column="0" Grid.Row="6" Style="{StaticResource Borde Label}"/>
+        <Label Content="Género:" Grid.Row="6" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <ComboBox Grid.Row="6" Grid.Column = "1" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0,0,0,0" Margin="5" SelectedValue="{Binding Path=Gender}" SelectedValuePath="Content">
+            <ComboBoxItem>M</ComboBoxItem>
+            <ComboBoxItem>F</ComboBoxItem>
+            
+        </ComboBox>
+
+        <Border Grid.Column="0" Grid.Row="7" Style="{StaticResource Borde Label}"/>
+        <Label Content="Dirección:" Grid.Row="7" Grid.Column = "0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        <Border Grid.Column="1" Grid.Row="7" Style="{StaticResource Borde Textbox}"/>
+        <TextBox Grid.Column="1" Grid.Row="7" Style="{StaticResource tx transparente}" Text="{Binding Path=Dir}"></TextBox>
+        
+        <Border Background="#0081a7" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="Black" CornerRadius="15"></Border>
+        <Button Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Background="Transparent" Click="Button_Click" Content="Registrar" FontWeight="Bold"></Button>
+        <Button Grid.Column="0" Grid.Row="9" Content="Regresar" Click="Button_Click_1"/>
+    </Grid>
+</Window>
+
+

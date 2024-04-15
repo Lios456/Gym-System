@@ -1,0 +1,52 @@
+﻿<Window x:Class="Aplicacion_Gym.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicacion_Gym"
+        mc:Ignorable="d"
+        Title="Sistema de Gestión de Gimnasios" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="5" CornerRadius="10" Background="#8ecae6"/>
+        <DataGrid Grid.Row="0" x:Name="Datos" FontFamily="Arial" FontSize="16" Background="Transparent" AlternatingRowBackground="#219ebc" RowBackground="Transparent" 
+                  Padding="5" Margin="5" BorderThickness="0,0,0,0" AutoGenerateColumns="False">
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType ="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#219ebc"></Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="*" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="DNI" Width="*" Binding="{Binding Path=DNI}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nombres" Width="*" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Apellidos" Width="*" Binding="{Binding Path=LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Teléfono" Width="*" Binding="{Binding Path=Phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Fecha de nacimiento" Width="*" Binding="{Binding Path=Fnac}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Edad" Width="*" Binding="{Binding Path=Age}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sexo" Width="*" Binding="{Binding Path=Gender}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Dirección" Width="*" Binding="{Binding Path=Dir}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Background="#FF2A9D8F" BorderBrush="Black" BorderThickness="2" CornerRadius="15"/>
+            <Button Grid.Column="0" Content="Agregar"  FontSize="18" FontFamily="Arial" Click="Agregar" Background="Transparent"/>
+            <Border Grid.Column="1" Background="#FFE9C46A" BorderBrush="Black" BorderThickness="2" CornerRadius="15"/>
+            <Button Grid.Column="1" Content="Ver" Background="Transparent" FontSize="18" FontFamily="Arial" Click="Refrescar"/>
+            <Border Grid.Column="2" Background="#FFE76F51" BorderBrush="Black" BorderThickness="2" CornerRadius="15"/>
+            <Button Grid.Column="2" Content="Borrar" Background="Transparent" FontSize="18" FontFamily="Arial" Click="Eliminar"/>
+        </Grid>
+    </Grid>
+</Window>
